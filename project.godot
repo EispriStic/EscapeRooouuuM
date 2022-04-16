@@ -1,0 +1,61 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "CameraState",
+"language": "GDScript",
+"path": "res://Scripts/Class/GameCameraStates/CameraState.gd"
+}, {
+"base": "CameraState",
+"class": "CameraStatePlayer",
+"language": "GDScript",
+"path": "res://Scripts/Class/GameCameraStates/CameraStatePlayer.gd"
+}, {
+"base": "Spatial",
+"class": "GameCamera",
+"language": "GDScript",
+"path": "res://Assets/Object/GameCamera/GameCamera.gd"
+}, {
+"base": "Spatial",
+"class": "Level",
+"language": "GDScript",
+"path": "res://Scripts/Class/Level.gd"
+}, {
+"base": "Spatial",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Assets/Object/Player/Player.gd"
+} ]
+_global_script_class_icons={
+"CameraState": "",
+"CameraStatePlayer": "",
+"GameCamera": "",
+"Level": "",
+"Player": ""
+}
+
+[application]
+
+config/name="Escape RooouuuM"
+run/main_scene="res://Scenes/DebugLevel/DebugLevel.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Scripts/Autoload/Global.gd"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
