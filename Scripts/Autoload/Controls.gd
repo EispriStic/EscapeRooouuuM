@@ -69,8 +69,8 @@ func updateDirection() -> void:
 
 
 func updateDirectionKeyboard()-> void:
-	var x: float = Input.get_action_strength("right") - Input.get_action_strength("left") # Horizontal motion
-	var y: float = Input.get_action_strength("down") - Input.get_action_strength("up") # Vertical motion
+	var x: float = Input.get_action_strength("left") - Input.get_action_strength("right") # Horizontal motion
+	var y: float = Input.get_action_strength("up") - Input.get_action_strength("down") # Vertical motion
 	
 	self.direction.x = x
 	self.direction.y = y
@@ -78,8 +78,8 @@ func updateDirectionKeyboard()-> void:
 	self.direction = self.direction.normalized().clamped(1)
 
 func updateDirectionController()-> void:
-	var x: float = Input.get_action_strength("right") - Input.get_action_strength("left") # Horizontal motion
-	var y: float = Input.get_action_strength("down") - Input.get_action_strength("up") # Vertical motion
+	var x: float = Input.get_action_strength("left") - Input.get_action_strength("right") # Horizontal motion
+	var y: float = Input.get_action_strength("up") - Input.get_action_strength("down") # Vertical motion
 	
 	if self.isInDeadZone(x, y):
 		self.direction = Vector2.ZERO
@@ -101,8 +101,8 @@ func updateOrientation() -> void:
 
 
 func updateOrientationKeyboard() -> void:
-	self.orientation.x = self._lastMouseMouvement.y * self.orientationSensibility * self.KEYBOARD_SENSIBILITY_MULTIPLIER # Horizontal motion
-	self.orientation.y = -1.0 * self._lastMouseMouvement.x * self.orientationSensibility * self.KEYBOARD_SENSIBILITY_MULTIPLIER # Vertical motion
+	self.orientation.y = -1.0 * self._lastMouseMouvement.x * self.orientationSensibility * self.KEYBOARD_SENSIBILITY_MULTIPLIER # Horizontal motion
+	self.orientation.x = self._lastMouseMouvement.y * self.orientationSensibility * self.KEYBOARD_SENSIBILITY_MULTIPLIER # Vertical motion
 	
 	if self._lastMouseMouvement != Vector2.ZERO:
 		self._lastMouseMouvement = Vector2.ZERO
