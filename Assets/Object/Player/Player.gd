@@ -47,6 +47,12 @@ func add_item(item: Item):
 		self._inventory_ui.update()
 
 
+func remove_item(item: Item):
+	if item in self._inventory:
+		self._inventory.remove( self._inventory.bsearch(item) )
+		self._inventory_ui.update()
+
+
 func set_orientation(value: Vector2):
 	if _orientation != value:
 		_orientation = value

@@ -36,8 +36,8 @@ func update():
 		
 		for item in Global.player.get_inventory():
 			var element: ItemUiTemplate = self.PRELOAD_ITEM.instance()
+			self._elements.append(element)
 			self._layout_items.add_child(element)
 			element.set_icon(item.icon)
 			element.set_item_name(item.item_name)
 			element.set_description(item.decription)
-	

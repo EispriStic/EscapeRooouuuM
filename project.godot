@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Class/Item.gd"
 }, {
+"base": "Clickable",
+"class": "ItemConsumer",
+"language": "GDScript",
+"path": "res://Scripts/Class/ItemConsumer.gd"
+}, {
 "base": "Button",
 "class": "ItemUiTemplate",
 "language": "GDScript",
@@ -70,6 +75,7 @@ _global_script_class_icons={
 "Clickable": "",
 "GameCamera": "",
 "Item": "",
+"ItemConsumer": "",
 "ItemUiTemplate": "",
 "Level": "",
 "Player": "",
@@ -89,12 +95,22 @@ config/icon="res://icon.png"
 Global="*res://Scripts/Autoload/Global.gd"
 Controls="*res://Scripts/Autoload/Controls.gd"
 
+[debug]
+
+gdscript/warnings/unused_argument=false
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
+
 [display]
 
 window/size/width=1920
 window/size/height=1024
 window/size/test_width=1024
 window/size/test_height=600
+
+[global]
+
+warning=false
 
 [input]
 
