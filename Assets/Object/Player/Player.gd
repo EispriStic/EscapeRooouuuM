@@ -13,8 +13,10 @@ var state: PlayerState = PlayerStateNormal.new()
 var _inventory: Array = []
 
 var _inventory_ui: UiInventory
+var _ui: PlayerUi
 
 const PRELOAD_UIINVENTORY = preload("res://Assets/Object/Ui/UiInventory/UiInventory.tscn")
+const PRELOAD_UI = preload("res://Assets/Object/Ui/PlayerUi/PlayerUi.tscn")
 
 
 func _ready():
@@ -22,6 +24,21 @@ func _ready():
 	self._inventory_ui = self.PRELOAD_UIINVENTORY.instance()
 	get_viewport().call_deferred("add_child", self._inventory_ui)
 	self._inventory_ui.update()
+	
+	self._ui = self.PRELOAD_UI.instance()
+	get_viewport().call_deferred("add_child", self._ui)
+
+
+func _exit_tree():
+	self._inventory_ui.queue_free()
+	self._inventory_ui = null
+	self._ui.queue_free()
+	self._ui = null
+
+
+func _process(delta: float):
+	if self._ui and self._ray:
+		self._ui.show_action(self._ray.get_collider())
 
 
 func _physics_process(delta: float):
@@ -31,7 +48,7 @@ func _physics_process(delta: float):
 
 
 func _input(event: InputEvent):
-	if Input.is_action_just_pressed("action"):
+	if Input.is_action_just_pressed("action") and not self._inventory_ui.visible:
 		var obj = self._ray.get_collider()
 		if obj is Clickable:
 			obj.interact()

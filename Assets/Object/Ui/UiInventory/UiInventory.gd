@@ -21,7 +21,7 @@ func _ready():
 
 
 func show():
-	get_viewport().move_child(self, 0)
+	get_parent().move_child(self, 0)
 	self.visible = true
 
 

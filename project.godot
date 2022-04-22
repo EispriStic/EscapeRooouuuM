@@ -65,6 +65,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/Class/PlayerStates/PlayerStateNormal.gd"
 }, {
 "base": "Control",
+"class": "PlayerUi",
+"language": "GDScript",
+"path": "res://Assets/Object/Ui/PlayerUi/PlayerUi.gd"
+}, {
+"base": "Control",
 "class": "UiInventory",
 "language": "GDScript",
 "path": "res://Assets/Object/Ui/UiInventory/UiInventory.gd"
@@ -81,6 +86,7 @@ _global_script_class_icons={
 "Player": "",
 "PlayerState": "",
 "PlayerStateNormal": "",
+"PlayerUi": "",
 "UiInventory": ""
 }
 
