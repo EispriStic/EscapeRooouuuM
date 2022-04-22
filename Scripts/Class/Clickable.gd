@@ -14,6 +14,10 @@ func interact():
 		self._on_clicked()
 
 
+func get_interaction_text() -> String:
+	return "Click me"
+
+
 func _on_clicked():
 	""" Rewrite me """
 	pass

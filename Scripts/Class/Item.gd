@@ -11,6 +11,10 @@ var decription: String = "What it does"
 signal collected
 
 
+func get_interaction_text() -> String:
+	return "Pick me"
+
+
 func _on_clicked():
 	if Global.player != null:
 		Global.player.add_item(self)
