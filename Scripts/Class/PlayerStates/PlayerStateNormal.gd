@@ -7,8 +7,8 @@ var _result_motion: Vector3 = Vector3.ZERO
 var _y_motion: float = 0.0
 
 const SPEED: float = 5.0
-const ACCELERATION: float = 15.0
-const CAM_SPEED: float = 5.0
+const ACCELERATION: float = 5.0
+const CAM_SPEED: float = 2.0
 const CAM_MAX_ANGLE: float = PI/2
 const CAM_MIN_ANGLE: float = -PI/2
 
@@ -23,7 +23,7 @@ func move(player: KinematicBody, orientation: Vector2, delta: float):
 	
 	self._motion = lerp( self._motion, self._target_motion, self.ACCELERATION * delta )
 	
-	player.move_and_slide(self._motion, Vector3.UP)
+	self._result_motion = player.move_and_slide(self._motion, Vector3.UP)
 
 
 func rotate(rotaion: Vector2, delta: float) -> Vector2:
